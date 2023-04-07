@@ -1,0 +1,7 @@
+footer {
+  width: 100%;
+  background-color: var(--header-background);
+  color: #fff;
+  font-size: large;
+  text-align: center;
+}
