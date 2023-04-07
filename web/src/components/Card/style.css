@@ -1,0 +1,145 @@
+.card-container {
+  padding-top: 1%;
+  display: flex;
+  max-height: 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  margin: 3%;
+  width: 24%;
+  background-color: #efefef;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container-images {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.setas {
+  height: 13%;
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.heart-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.heart {
+  cursor: pointer;
+}
+.setas:hover {
+  opacity: 85.5%;
+}
+.direita {
+  left: 87%;
+}
+.esquerda {
+  left: -5%;
+}
+
+.describe {
+  padding: 4%;
+  word-break: break-all;
+}
+.not-allowed {
+  cursor: not-allowed;
+}
+.image-card {
+  cursor: pointer;
+  max-width: 100%;
+  width: 500px;
+  max-height: 100%;
+  height: 200px;
+}
+
+.image-card:hover {
+  filter: brightness(60%);
+}
+
+h3 {
+  text-align: right;
+  color: #363636;
+  font-weight: bold;
+}
+
+h5 {
+  font-weight: bold;
+}
+
+.author {
+  font-size: small;
+  color: #6b6b6b;
+}
+
+.horizontal-describe {
+  width: 100%;
+  background-color: #d1cfcf;
+  height: 1px;
+}
+
+.card-footer-describe {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: small;
+  word-break: keep-all;
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  .setas {
+    height: 10%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .card-container {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .card {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .setas {
+    height: 9.7%;
+  }
+}
+
+@media only screen and (max-width: 710px) {
+  .direita {
+    float: right;
+  }
+  .esquerda {
+    left: -1.5%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .card {
+    width: 70%;
+  }
+  .setas {
+    height: 8.6%;
+  }
+}
