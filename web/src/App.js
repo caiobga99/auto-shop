@@ -6,8 +6,17 @@ import Register from "./components/Register/index";
 import Home from "./pages/Home/index";
 import Sale from "./pages/Sale/index";
 import Profile from "./pages/Profile/index";
+import { useEffect, useState } from "react";
+import { auth } from "./firebase";
 
 export default function App() {
+  const [userName, setUserName] = useState("");
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      user ? setUserName(user.displayName) : setUserName("");
+      console.log(user);
+    });
+  }, []);
   return (
     <div className="App">
       <Routes>
@@ -15,8 +24,8 @@ export default function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/register" element={<Register />} />
         <Route exact path="/venda" element={<Sale />} />
-        <Route exact path="/logOut" element={<Home/>} />
-        <Route exact path="/profile" element={<Profile/>} />
+        <Route exact path="/logOut" element={<Home />} />
+        <Route exact path="/profile" element={<Profile />} />
         {/* <Route path="*" element={<NotFound/>}/> */}
       </Routes>
     </div>
