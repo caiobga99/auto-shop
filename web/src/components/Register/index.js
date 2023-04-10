@@ -10,10 +10,12 @@ import Footer from "../Footer";
 import { useDispatch, useSelector } from "react-redux";
 
 import { loginUser } from "../../redux/user/actions";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { auth } from "../../firebase";
 
 import "./style.css";
 
- const Register = () => {
+const Register = () => {
   const { currentUser } = useSelector((state) => state.userReducer);
 
   const navigate = useNavigate();
@@ -24,7 +26,7 @@ import "./style.css";
     }
     return;
   }, [currentUser, navigate]);
-  
+
   const {
     register,
     handleSubmit,
@@ -40,25 +42,28 @@ import "./style.css";
   const watchPassword = watch("password");
 
   const onSubmit = async (data) => {
-    const { name, email } = data;
+    const { name, email, password } = data;
+    console.log(name);
     setMessageOfSignUp("Carregando...");
-    await api.post("/user/signUp", data).then(({ data }) => {
-      setMessageOfSignUp(data);
-      setTimeout(() => {
-        setMessageOfSignUp("");
-      }, 5000);
-
-      if (data === "Usuario registrado com sucesso!") {
-        console.log(data);
-        dispatch(loginUser({ name: name, email: email }));
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
-      }
-    });
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(async (res) => {
+        const user = res.user;
+        dispatch(loginUser(user));
+        await updateProfile(user, {
+          displayName: name,
+        });
+        // setTimeout(() => {
+        //   navigate("/");
+        // }, 1000);
+        console.log(res);
+      })
+      .catch((error) => setMessageOfSignUp(error.message));
+    setMessageOfSignUp("Usuario Cadastrado com sucesso!");
+    setTimeout(() => {
+      setMessageOfSignUp("");
+    }, 5000);
 
     setIsSafeToReset(true);
-    console.log(data);
   };
 
   useEffect(() => {
