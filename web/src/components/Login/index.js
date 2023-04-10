@@ -12,6 +12,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../../redux/user/actions";
 
 import "./style.css";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../firebase";
 
 const Login = () => {
   const { currentUser } = useSelector((state) => state.userReducer);
@@ -38,20 +40,21 @@ const Login = () => {
   const [messageOfSignIn, setMessageOfSignIn] = useState("");
 
   const onSubmit = async (data) => {
+    const { name, email, password } = data;
     setMessageOfSignIn("Carregando...");
-    const { name, email } = data;
-    await api.post("/user/signIn", data).then(({ data }) => {
-      setMessageOfSignIn(data);
-      setTimeout(() => {
-        setMessageOfSignIn("");
-      }, 5000);
-      if (data === "Login efetuado com sucesso!") {
-        dispatch(loginUser({ name: name, email: email }));
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
-      }
-    });
+    signInWithEmailAndPassword(auth, email, password)
+      .then(async (res) => {
+        dispatch(loginUser(name, email));
+        // setTimeout(() => {
+        //     navigate("/");
+        //   }, 1000);
+        console.log(res);
+      })
+      .catch((error) => setMessageOfSignIn(error.message));
+    setMessageOfSignIn("Login efetuado com sucesso!");
+    setTimeout(() => {
+      setMessageOfSignIn("");
+    }, 5000);
 
     setIsSafeToReset(true);
   };
@@ -68,18 +71,6 @@ const Login = () => {
       </div>
       <div className="form-container">
         <div className="message">{messageOfSignIn}</div>
-        <div className="form-group">
-          <label>Nome</label>
-          <input
-            className={errors?.name && "input-error"}
-            type="text"
-            placeholder="Seu nome"
-            {...register("name", { required: true })}
-          />
-          {errors?.name?.type === "required" && (
-            <p className="error-message">O nome é obrigatório.</p>
-          )}
-        </div>
         <div className="form-group">
           <label>E-mail</label>
           <input
