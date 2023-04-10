@@ -3,7 +3,6 @@ import * as val from "validator";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
-import api from "../../lib/axios";
 import Header from "../Header/index";
 import Footer from "../Footer/index";
 
@@ -44,14 +43,15 @@ const Login = () => {
     setMessageOfSignIn("Carregando...");
     signInWithEmailAndPassword(auth, email, password)
       .then(async (res) => {
+        setMessageOfSignIn("Login efetuado com sucesso!");
         dispatch(loginUser(name, email));
-        // setTimeout(() => {
-        //     navigate("/");
-        //   }, 1000);
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
         console.log(res);
       })
       .catch((error) => setMessageOfSignIn(error.message));
-    setMessageOfSignIn("Login efetuado com sucesso!");
+
     setTimeout(() => {
       setMessageOfSignIn("");
     }, 5000);

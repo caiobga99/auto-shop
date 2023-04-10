@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 
 import { logoutUser } from "../../redux/user/actions";
 import { removeAllProductsToCart } from "../../redux/cart/actions";
+import useAnalyticsEventTracker from "../../analyticsEventTracker";
 
 import "./style.css";
 
@@ -18,7 +19,7 @@ const Header = () => {
   const { currentUser } = useSelector((state) => state.userReducer);
 
   const location = useLocation();
-
+  const gaEventTracker = useAnalyticsEventTracker("Rotas");
   const handleLogoutClick = () => {
     dispatch(logoutUser());
     dispatch(removeAllProductsToCart());
@@ -72,6 +73,7 @@ const Header = () => {
                   <li>
                     <Link
                       to={route}
+                      onClick={() => gaEventTracker(route)}
                       className={
                         location.pathname === route ? "currentUrl" : "link"
                       }

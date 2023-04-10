@@ -175,7 +175,7 @@ const Sale = () => {
           )}
         </div>
         <div className="form-group">
-          <button onClick={() => handleSubmit(onSubmit)()}>
+          <button disabled={true} onClick={() => handleSubmit(onSubmit)()}>
             Registre seu veículo aqui
           </button>
         </div>

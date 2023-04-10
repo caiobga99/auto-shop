@@ -1,4 +1,5 @@
 import CartActionTypes from "./action-types";
+import analyticsEventTracker from "../../analyticsEventTracker";
 
 const initialState = {
   products: [],
@@ -6,6 +7,8 @@ const initialState = {
 };
 
 const cartReducer = (state = initialState, action) => {
+  const gaEventTracker = analyticsEventTracker(action.payload?.title);
+
   switch (action.type) {
     case CartActionTypes.ADD_PRODUCT:
       const productIsAlreadyInCart = state.products.some(
@@ -15,6 +18,7 @@ const cartReducer = (state = initialState, action) => {
 
       //se ele estiver no carrinho, remove-lo,
       if (productIsAlreadyInCart) {
+        gaEventTracker(`foi removido ao carrinho`);
         return {
           ...state,
           products: state.products.filter(
@@ -27,6 +31,7 @@ const cartReducer = (state = initialState, action) => {
         };
       }
       //se ele não estiver adiciona-lo
+      gaEventTracker(`foi adicionado ao carrinho`);
       return {
         ...state,
         products: [...state.products, { ...action.payload }],
@@ -37,6 +42,7 @@ const cartReducer = (state = initialState, action) => {
       };
 
     case CartActionTypes.REMOVE_PRODUCT:
+      gaEventTracker(`foi removido ao carrinho`);
       return {
         ...state,
         products: state.products.filter(
@@ -49,6 +55,7 @@ const cartReducer = (state = initialState, action) => {
       };
 
     case CartActionTypes.REMOVE_ALL_PRODUCTS:
+      gaEventTracker(`Todos produtos foram removidos do carrinho`);
       return {
         products: [],
         productsTotalPrice: 0,
