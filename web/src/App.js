@@ -7,6 +7,7 @@ import Home from "./pages/Home/index";
 import Sale from "./pages/Sale/index";
 import Profile from "./pages/Profile/index";
 import { useEffect, useState } from "react";
+
 import { auth } from "./firebase";
 
 export default function App() {
