@@ -7,13 +7,18 @@ import api from "../../lib/axios";
 
 import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "../../redux/user/actions";
-
+import {
+  deleteUser,
+  getAuth,
+  reauthenticateWithCredential,
+} from "firebase/auth";
 import "./style.css";
 
 const Profile = () => {
   const { currentUser } = useSelector((rootReducer) => rootReducer.userReducer);
   const { products } = useSelector((rootReducer) => rootReducer.cartReducer);
-
+  const auth = getAuth();
+  const user = auth.currentUser;
   const dispatch = useDispatch();
   const { productsTotalPrice } = useSelector(
     (rootReducer) => rootReducer.cartReducer
@@ -27,14 +32,8 @@ const Profile = () => {
         "Deseja mesmo apagar sua conta? todos os dados serão removidos"
       )
     ) {
-      console.log(currentUser);
-      api
-        .delete("/user/delete/", {
-          data: {
-            name: currentUser.name,
-            email: currentUser.email,
-          },
-        })
+      console.log(user);
+      deleteUser(user)
         .then(() => {
           dispatch(logoutUser());
           navigate("/");
@@ -42,7 +41,6 @@ const Profile = () => {
         .catch((error) => console.log("erro ao apagar sua conta: ", error));
     }
   };
-
   useEffect(() => {
     if (!currentUser) {
       navigate("/");
@@ -62,7 +60,7 @@ const Profile = () => {
           </button>
         </div>
         <div className="informations">
-          <h2>Nome: {currentUser?.name}</h2>
+          <h2>Nome: {currentUser?.displayName}</h2>
           <h2>Email: {currentUser?.email}</h2>
         </div>
         <div className="profile-content">
