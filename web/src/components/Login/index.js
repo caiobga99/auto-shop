@@ -39,12 +39,12 @@ const Login = () => {
   const [messageOfSignIn, setMessageOfSignIn] = useState("");
 
   const onSubmit = async (data) => {
-    const { name, email, password } = data;
+    const { email, password } = data;
     setMessageOfSignIn("Carregando...");
     signInWithEmailAndPassword(auth, email, password)
       .then(async (res) => {
         setMessageOfSignIn("Login efetuado com sucesso!");
-        dispatch(loginUser(name, email));
+        dispatch(loginUser(res.user));
         setTimeout(() => {
           navigate("/");
         }, 1000);

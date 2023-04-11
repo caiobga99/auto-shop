@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import Login from "./components/Login/index";
 import Register from "./components/Register/index";
@@ -9,10 +9,16 @@ import Profile from "./pages/Profile/index";
 import { useEffect, useState } from "react";
 
 import { auth } from "./firebase";
+import ReactGA from "react-ga";
+
+const TRACKING_ID = "G-KNWLS24FGR";
+ReactGA.initialize(TRACKING_ID);
 
 export default function App() {
+  const location = useLocation();
   const [userName, setUserName] = useState("");
   useEffect(() => {
+    ReactGA.pageview(location.pathname + location.search);
     auth.onAuthStateChanged((user) => {
       user ? setUserName(user.displayName) : setUserName("");
       console.log(user);
