@@ -14,7 +14,7 @@ const cars = [
     km: 101,
     fuel: "GASOLINA",
     id: 1,
-    brand: "CHEVROLET"
+    brand: "CHEVROLET",
   },
   {
     title: "CHEVROLET C10 4.1 CS 8V 2P MANUAL",
@@ -31,7 +31,7 @@ const cars = [
     km: 999,
     fuel: "GASOLINA",
     id: 2,
-    brand: "CHEVROLET"
+    brand: "CHEVROLET",
   },
   {
     title: "CHEVROLET OMEGA 3.0 MPFI CD 12V 4P AUTOMÁTICO",
@@ -48,7 +48,7 @@ const cars = [
     km: 74.0,
     fuel: "GASOLINA",
     id: 3,
-    brand: "CHEVROLET"
+    brand: "CHEVROLET",
   },
   {
     title: "CHEVROLET IPANEMA 1.8 EFI GL 8V 4P MANUAL",
@@ -65,7 +65,7 @@ const cars = [
     km: 95.0,
     fuel: "GASOLINA",
     id: 4,
-    brand: "CHEVROLET"
+    brand: "CHEVROLET",
   },
   {
     title: "FOX 1.0 MI 8V FLEX 4P MANUAL  4 PORTAS",
@@ -82,7 +82,7 @@ const cars = [
     km: 1.001,
     fuel: "Flex",
     id: 5,
-    brand: "Volkswagen"
+    brand: "Volkswagen",
   },
   {
     title: "FORD - FIESTA 1.6 Rocam SE Sedan 8V",
@@ -92,7 +92,7 @@ const cars = [
       "https://www.comprecar.com.br/storage/vehicles/big/3565c8bf-a02e-4bec-b287-39fc2753451f.webp?v=1679160936",
       "https://www.comprecar.com.br/storage/vehicles/big/b6790b24-c925-4a68-a405-56882ce26828.webp?v=1679160936",
       "https://www.comprecar.com.br/storage/vehicles/big/029585ff-8390-4bcf-8f61-c7feeb9999eb.webp?v=1679160936",
-  ],
+    ],
     price: "149.990,00",
     author: "R&M Multimarcas",
     year: 2014,
@@ -118,23 +118,6 @@ const cars = [
     fuel: "GASOLINA",
     id: 7,
     brand: "Toyota",
-  },
-  {
-    title: "Volkswagen - UP - 1.0 MPI MOVE UP 12V 4P MANUAL",
-    images: [
-      "https://www.comprecar.com.br/storage/vehicles/big/9700760f-bd29-4f08-9003-e01627f311d9.webp?v=1678970024",
-      "https://www.comprecar.com.br/storage/vehicles/big/bc1dad48-4253-4854-9cb7-be5dbff4dcd4.webp?v=1679163128",
-      "https://www.comprecar.com.br/storage/vehicles/big/5a291ff3-4b85-4ea8-9082-6900544e70bb.webp?v=1679163128",
-      "https://www.comprecar.com.br/storage/vehicles/big/8b9123ca-b155-4f14-872a-82ceadec680e.webp?v=1679163128",
-      "https://www.comprecar.com.br/storage/vehicles/big/4aacdac4-d5b1-4039-9082-684c1d6d0aa9.webp?v=1679163128",
-    ],
-    price: "45.990,00",
-    author: "2N Multimarcas",
-    year: 2020,
-    km: 11.243,
-    fuel: "ETANOL",
-    id: 8,
-    brand: "Volkswagen",
   },
   {
     title: "Voyage - 1.6 - CL 16V TURBO",

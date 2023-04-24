@@ -52,13 +52,13 @@ const Register = () => {
         await updateProfile(user, {
           displayName: name,
         });
-        // setTimeout(() => {
-        //   navigate("/");
-        // }, 1000);
-        console.log(res);
+         setTimeout(() => {
+           navigate("/");
+         }, 1000);
+        setMessageOfSignUp("Usuario Cadastrado com sucesso!");
       })
       .catch((error) => setMessageOfSignUp(error.message));
-    setMessageOfSignUp("Usuario Cadastrado com sucesso!");
+   
     setTimeout(() => {
       setMessageOfSignUp("");
     }, 5000);

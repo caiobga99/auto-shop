@@ -1,7 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import ReactGA from "react-ga";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC4N0mD-wMsv4t6MVWAv1g5cg_OiH_81dk",
@@ -15,5 +14,3 @@ const firebaseConfig = {
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
-const TRACKING_ID = "G-KNWLS24FGR";
-ReactGA.initialize(TRACKING_ID);
