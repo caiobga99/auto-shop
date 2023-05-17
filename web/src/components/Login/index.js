@@ -42,12 +42,12 @@ const Login = () => {
     const { name, email, password } = data;
     setMessageOfSignIn("Carregando...");
     signInWithEmailAndPassword(auth, email, password)
-      .then((res) => {
+      .then(async (res) => {
         setMessageOfSignIn("Login efetuado com sucesso!");
-        dispatch(loginUser(name, email));
-        // setTimeout(() => {
-        //   navigate("/");
-        // }, 1000);
+        dispatch(loginUser(res.user));
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
         console.log(res);
       })
       .catch((error) => setMessageOfSignIn(error.message));
