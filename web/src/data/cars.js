@@ -1,5 +1,6 @@
 const cars = [
   {
+    isLiked: false,
     title: "CHEVROLET MARAJÓ 1.6 SL 8V 2P MANUAL",
     images: [
       "https://image.webmotors.com.br/_fotos/anunciousados/gigante/2023/202303/20230304/chevrolet-marajo-1.6-sl-8v-gasolina-2p-manual-wmimagem03302693519.jpg?s=fill&w=552&h=414&q=60",
@@ -17,6 +18,7 @@ const cars = [
     brand: "CHEVROLET",
   },
   {
+    isLiked: false,
     title: "CHEVROLET C10 4.1 CS 8V 2P MANUAL",
     images: [
       "https://image.webmotors.com.br/_fotos/anunciousados/gigante/2023/202301/20230116/chevrolet-c10-4.1-cs-8v-gasolina-2p-manual-wmimagem1336500774.jpg?s=fill&w=552&h=414&q=60",
@@ -34,6 +36,7 @@ const cars = [
     brand: "CHEVROLET",
   },
   {
+    isLiked: false,
     title: "CHEVROLET OMEGA 3.0 MPFI CD 12V 4P AUTOMÁTICO",
     images: [
       "https://image.webmotors.com.br/_fotos/anunciousados/gigante/2023/202303/20230307/chevrolet-omega-3.0-mpfi-cd-12v-gasolina-4p-automatico-wmimagem16131122993.jpg?s=fill&w=552&h=414&q=60",
@@ -51,6 +54,7 @@ const cars = [
     brand: "CHEVROLET",
   },
   {
+    isLiked: false,
     title: "CHEVROLET IPANEMA 1.8 EFI GL 8V 4P MANUAL",
     images: [
       "https://image.webmotors.com.br/_fotos/anunciousados/gigante/2022/202212/20221227/chevrolet-ipanema-1.8-efi-gl-8v-gasolina-4p-manual-wmimagem16381047921.jpg?s=fill&w=552&h=414&q=60",
@@ -68,13 +72,14 @@ const cars = [
     brand: "CHEVROLET",
   },
   {
+    isLiked: false,
     title: "FOX 1.0 MI 8V FLEX 4P MANUAL  4 PORTAS",
     images: [
-      "https://www.comprecar.com.br/storage/vehicles/big/99d647c3-3b62-4c32-8a11-ded10f08f1b2.webp?v=1678969206",
-      "https://www.comprecar.com.br/storage/vehicles/big/7c68ced7-5dbb-4066-8a80-38e2624de2fa.webp?v=1679163276",
-      "https://www.comprecar.com.br/storage/vehicles/big/d695122e-d877-412d-a1e8-1521170f2f2e.webp?v=1679163276",
-      "https://www.comprecar.com.br/storage/vehicles/big/536defaa-8e21-49f4-b5bc-464a22dcf094.webp?v=1679163276",
-      "https://www.comprecar.com.br/storage/vehicles/big/d175332b-884b-45d4-a66a-f6aa83de00a8.webp?v=1679162937",
+      "https://www.comprecar.com.br/storage/vehicles/big/02d0876d-43b0-450b-98cb-6065e09a2acb.webp?v=1684147809",
+      "https://www.comprecar.com.br/storage/vehicles/big/c14452f0-0065-4cc8-b363-f41f9aabd515.webp?v=1684147809",
+      "https://www.comprecar.com.br/storage/vehicles/big/15bb4125-c2ad-4590-9bc7-7ebd38fa9212.webp?v=1684147809",
+      "https://www.comprecar.com.br/storage/vehicles/big/cae63ae2-8b77-443c-9289-eb39e0cebd98.webp?v=1684147809",
+      "https://www.comprecar.com.br/storage/vehicles/big/d8f5fac9-11d6-494d-ab54-2f85d3186b77.webp?v=1684147809",
     ],
     price: "32.900,00",
     author: "Smart Veiculos",
@@ -85,15 +90,16 @@ const cars = [
     brand: "Volkswagen",
   },
   {
-    title: "FORD - FIESTA 1.6 Rocam SE Sedan 8V",
+    isLiked: false,
+    title: "FORD - FIESTA 1.6 TITANUIM SE Sedan 8V",
     images: [
-      "https://www.comprecar.com.br/storage/vehicles/big/ecf03171-e50c-4d1c-8855-350df239e988.webp?v=1679160936",
-      "https://www.comprecar.com.br/storage/vehicles/big/c12e310f-62f4-4c79-8f3c-86c5fd36fec0.webp?v=1679160936",
-      "https://www.comprecar.com.br/storage/vehicles/big/3565c8bf-a02e-4bec-b287-39fc2753451f.webp?v=1679160936",
-      "https://www.comprecar.com.br/storage/vehicles/big/b6790b24-c925-4a68-a405-56882ce26828.webp?v=1679160936",
-      "https://www.comprecar.com.br/storage/vehicles/big/029585ff-8390-4bcf-8f61-c7feeb9999eb.webp?v=1679160936",
+      "https://www.comprecar.com.br/storage/vehicles/big/41559a15-c882-42db-95cd-adcd686105b9.webp?v=1684147882",
+      "https://www.comprecar.com.br/storage/vehicles/big/5f558338-6d3f-4647-8bec-55f5b70dd4dd.webp?v=1684147882",
+      "https://www.comprecar.com.br/storage/vehicles/big/51c263bf-e3b1-48b0-9ce1-10c3c6330572.webp?v=1684147882",
+      "https://www.comprecar.com.br/storage/vehicles/big/dc1ddc66-4cc6-4915-bc7b-91fd18d2702f.webp?v=1684147882",
+      "https://www.comprecar.com.br/storage/vehicles/big/f5e977e2-f9a7-477e-bb9c-39eaeafae386.webp?v=1684147882",
     ],
-    price: "149.990,00",
+    price: "55.990,00",
     author: "R&M Multimarcas",
     year: 2014,
     km: 97.1,
@@ -102,14 +108,15 @@ const cars = [
     brand: "FORD",
   },
   {
+    isLiked: false,
     title: "Toyota - HILUX - 3.0 SRV 4X4 CD 16V TURBO",
     images: [
-      "https://www.comprecar.com.br/storage/vehicles/big/a2eff760-e7a8-4c9c-9d81-1629673b8920.webp?v=1679163484",
-      "https://www.comprecar.com.br/storage/vehicles/big/6c90a6f2-c393-4734-b694-86455d12a084.webp?v=1679163484",
-      "https://www.comprecar.com.br/storage/vehicles/big/b646421d-7fb0-4523-a4c5-e47e4a892403.webp?v=1679163484",
-      "https://www.comprecar.com.br/storage/vehicles/big/eb90b1bf-1d9c-4b08-8513-a03b6b280b5e.webp?v=1679163484",
-      "https://www.comprecar.com.br/storage/vehicles/big/f615b851-9dd5-4cd4-9e46-5f6dc023269e.webp?v=1679308759",
-      "https://www.comprecar.com.br/storage/vehicles/thumb/f615b851-9dd5-4cd4-9e46-5f6dc023269e.webp",
+      "https://www.comprecar.com.br/storage/vehicles/big/5dff0b71-4182-4de9-bd88-40a437373bd0.webp?v=1684147991",
+      "https://www.comprecar.com.br/storage/vehicles/big/a37b5777-326f-4ca9-93dc-b9315acb3c54.webp?v=1684147991",
+      "https://www.comprecar.com.br/storage/vehicles/big/39cdf7b6-b95a-48e8-b682-be5a091b3a86.webp?v=1684147991",
+      "https://www.comprecar.com.br/storage/vehicles/big/078df7e0-7781-45ce-9b86-d49c3b127c47.webp?v=1684147991",
+      "https://www.comprecar.com.br/storage/vehicles/big/c69ea7b5-4ce1-4d25-8cad-6e0b131d5315.webp?v=1684147991",
+      "https://www.comprecar.com.br/storage/vehicles/big/9753d28e-5ec6-4348-bc96-fa7e4d7c1e55.webp?v=1684147991",
     ],
     price: "149.990,00",
     author: "2N Multimarcas",
@@ -120,6 +127,7 @@ const cars = [
     brand: "Toyota",
   },
   {
+    isLiked: false,
     title: "Voyage - 1.6 - CL 16V TURBO",
     images: [
       "https://quatrorodas.abril.com.br/wp-content/uploads/2016/09/57ec506e0e2163027004a521qr-639-gb-voyage-02-eps-e1653773015467.webp",
@@ -137,6 +145,7 @@ const cars = [
     brand: "Voyage",
   },
   {
+    isLiked: false,
     title: "Kia - SORENTO 2.4 - 16V EX",
     images: [
       "https://www.comprecar.com.br/storage/vehicles/big/44646fb9-eaeb-44bd-b888-2472d626d131.webp?v=1679163547",
@@ -154,6 +163,7 @@ const cars = [
     brand: "Kia",
   },
   {
+    isLiked: false,
     title: "FIAT TORO 1.8 16V EVO ENDURANCE AT6",
     images: [
       "https://image.webmotors.com.br/_fotos/AnuncioUsados/gigante/2022/202211/20221101/fiat-toro-1.8-16v-evo-flex-endurance-at6-wmimagem17505679971.jpg?s=fill&w=249&h=186&q=70",
@@ -171,6 +181,7 @@ const cars = [
     brand: "FIAT",
   },
   {
+    isLiked: false,
     title: "FORD KA  1.0 8V SP MANUAL",
     images: [
       "https://image.webmotors.com.br/_fotos/AnuncioUsados/gigante/2023/202302/20230213/ford-ka-1.0-mpi-gl-8v-gasolina-2p-manual-WMIMAGEM23255034568.jpg?s=fill&w=249&h=186&q=70",
@@ -188,6 +199,7 @@ const cars = [
     brand: "FORD",
   },
   {
+    isLiked: false,
     title: "CAMINHONETE FORD F-150 XLT Lariat 4x4 Shortbed",
     images: [
       "https://prod.pictures.autoscout24.net/listing-images/6958afad-43dd-4133-967d-a29ee90259a9_a063d410-2c3c-40e0-b7f6-9bb4ee5eac78.jpg/720x540.webp",
